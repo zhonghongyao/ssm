@@ -1,0 +1,17 @@
+1.统计单词词频柱形图
+2.统计该文本行数和字符数
+3.各种统计统计功能，显示程序所消耗时间
+4.可处理任意用户导入的任意文本
+5.统计文本中除冠词，代词，介词之外的高频词
+
+
+english,type,count,
+
+
+
+error:
+1.静态资源加载失败：
+<mvc:resources location="/static/" mapping="/static/**" />
+https://bbs.csdn.net/topics/392344295?page=1
+2.springmvc访问不了后台的解决办法
+https://blog.csdn.net/datangxiajun/article/details/70170182

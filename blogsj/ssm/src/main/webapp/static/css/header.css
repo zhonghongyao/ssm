@@ -1,0 +1,49 @@
+.header {
+	width: 100%;
+	height: 50px;
+	background-color: #176dc7;
+	border-bottom: 2px solid #0c397d
+}
+
+.header .h_lo {
+	width: 222px;
+	height: 100%;
+	line-height: 50px
+}
+
+.header .h_lo img {
+	margin: -8px 16px 0 11px
+}
+
+.header .h_lo span {
+	font-size: 25px;
+	color: #fff
+}
+
+.header .h_nav {
+	height: 100%;
+	overflow: hidden
+}
+
+.header .h_nav li {
+	padding: 0 43px;
+	line-height: 50px
+}
+
+.header .h_nav li a {
+	color: #fff;
+	font-size: 18px
+}
+
+.header .h_nav li:hover {
+	background-color: #0c397d;
+	cursor: pointer
+}
+
+.header .h_inout {
+	height: 100%;
+}
+
+.header .h_inout li {
+	line-height: 52px
+}

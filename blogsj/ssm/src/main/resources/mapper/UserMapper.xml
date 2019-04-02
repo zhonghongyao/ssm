@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 设置为IUserDao接口方法提供sql语句配置 -->
+<mapper namespace="com.zhong.dao.UserMapper">
+
+    <!--@param传递参数-->
+    <select id="selectUser" resultType="com.zhong.entiry.User">
+    SELECT * FROM tb_user WHERE user_name=${user_name}
+</select>
+    <!--JavaBean传递参数-->
+    <select id="selectList" parameterType="com.zhong.entiry.User" resultType="com.zhong.entiry.User">
+        SELECT * FROM tb_user WHERE user_name=${user_name} and password=${password}
+    </select>
+
+   <!-- map传递参数-->
+    <select id="selectMap" parameterType="map" resultType="com.zhong.entiry.User">
+        SELECT * FROM tb_user WHERE user_name=${user_name} and password=${password}
+    </select>
+
+     <!--模糊查询加分页-->
+    <select id="selectId" parameterType="map" resultType="com.zhong.entiry.User">
+        SELECT * FROM tb_user
+        where 1=1
+
+            <if test="user.user_name!=null and user.user_name!=''">
+               and user_name like concat('%',${user.user_name},'%')
+            </if>
+
+            <if test="page.pageStart>=0 and page.pageNum>=0">
+                limit ${page.pageStart},${page.pageNum}
+            </if>
+    </select>
+   <delete id="deleteUser">
+    delete from tb_user where user_name IN
+    <foreach item="name" index="index" collection="list" open="(" separator="," close=")">
+            #{name}
+    </foreach>
+
+</delete>
+</mapper>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 设置为IUserDao接口方法提供sql语句配置 -->
+<mapper namespace="com.zhong.dao.StudentSeifcardMapper">
+
+   <resultMap id="studentSelfcardMap" type="com.zhong.entiry.StudentSeifcard">
+       <id property="id" column="id"/>
+
+       <result property="student_id" column="student_id"/>
+       <result property="native_1" column="native_1"/>
+       <result property="issue_date" column="issue_date"/>
+       <result property="end_date" column="end_date"/>
+       <result property="note" column="note"/>
+
+
+   </resultMap>
+
+    <select id="selectStudentSeifcardByStudentId" parameterType="int" resultMap="studentSelfcardMap">
+        select * from t_student_selfcard
+        where student_id=#{student_id}
+    </select>
+
+
+
+</mapper>

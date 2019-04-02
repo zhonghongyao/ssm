@@ -1,0 +1,81 @@
+
+.content {
+	width: 100%;
+	position: absolute;
+	top: 52px;
+	bottom: 0;
+	overflow: hidden
+}
+
+.content .con_list {
+	width: 20%;
+	height: 100%;
+	border-right: 1px solid #d5dee8;
+	padding: 10px 9px
+}
+
+.content .con_list li {
+	width: 258px;
+	height: 78px;
+	border: 1px solid #e0e0e0;
+	background-color: #f8f8f8;
+	margin-bottom: 11px;
+	cursor: pointer
+}
+
+ .content .con_list li:hover {
+	border: 1px solid #0c397d;
+	background-color: #176dc7 
+}
+
+.content .con_list li:hover .tit h3 {
+	color: #fff
+}
+
+.content .con_list li:hover .tit span {
+	color: #fff
+}
+
+.content .con_list li img {
+	width: 45px;
+	height: 43px;
+	margin: 15px 0 0 21px
+}
+
+.content .con_list li .tit {
+	height: 43px;
+	margin: 15px 0 0 20px
+}
+
+.content .con_list li .tit h3 {
+	font-size: 16px;
+	color: #0961bb;
+	font-weight: 700;
+	margin-bottom: 6px
+}
+
+.content .con_list li .tit span {
+	font-size: 14px;
+	color: #888
+}
+
+.content .con_main {
+	width: 78.5%;
+	height: 100%
+}
+
+.content .con_main .main_head {
+	width: 100%;
+	height: 50px;
+	background-color: #ebf2fa
+}
+
+.content .con_main .main_head form {
+	height: 30px;
+	padding: 10px 0
+}
+
+.content .con_main .main_con {
+	width: 97%;
+	height: 100%
+}

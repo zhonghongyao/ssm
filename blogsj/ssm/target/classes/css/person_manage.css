@@ -1,0 +1,19 @@
+
+.content {
+	width: 100%;
+	position: absolute;
+	top: 52px;
+	bottom: 0;
+	overflow: hidden
+}
+
+.content .con_header {
+	width: 97%;
+	padding: 24px 26px
+}
+
+.content .con_header h3 {
+	font-size: 18px;
+	color: #176dc7;
+	font-weight: 700
+}

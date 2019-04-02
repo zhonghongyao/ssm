@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 设置为IUserDao接口方法提供sql语句配置 -->
+<mapper namespace="com.zhong.dao.WordMapper">
+
+
+    <!--JavaBean传递参数-->
+    <select id="selectWord" resultType="com.zhong.entiry.Word">
+        SELECT * FROM word
+    </select>
+
+    <select id="selectWordLine" resultType="com.zhong.entiry.WordLine">
+        SELECT * FROM word_count
+    </select>
+    <select id="selectTimeCount" resultType="com.zhong.entiry.TimeCount">
+        SELECT * FROM time_count
+    </select>
+
+    <insert id="insertword" parameterType="java.util.List" useGeneratedKeys="false">
+        insert into word
+        (word,count)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.word},
+            #{item.count}
+            )
+        </foreach>
+    </insert>
+    <insert id="insertWordLine" parameterType="com.zhong.entiry.WordLine">
+        insert into word_count
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+
+            <if test="wordLine != null">
+                wordLine,
+            </if>
+            <if test="charCount != null">
+                charCount,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+
+            <if test="wordLine != null">
+                #{wordLine,jdbcType=INTEGER},
+            </if>
+            <if test="charCount != null">
+                #{charCount,jdbcType=INTEGER},
+            </if>
+
+        </trim>
+    </insert>
+
+
+
+
+    <insert id="insertTimeCount" parameterType="java.util.List" useGeneratedKeys="false">
+        insert into time_count
+        (type,time)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+                #{item.type},
+                #{item.time}
+            )
+        </foreach>
+    </insert>
+
+
+
+
+
+</mapper>
